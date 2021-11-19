@@ -10,7 +10,7 @@ export class MessageComponent implements OnInit {
 
   @Input() message: Message;
   mediaUrl = '';
-  mediaName = '';
+  mediaFileName = '';
   type = 'text';
 
   constructor() { }
@@ -24,7 +24,7 @@ export class MessageComponent implements OnInit {
       for (const m of this.message.attachedMedia) {
         m.getContentTemporaryUrl().then((url) => {
           this.mediaUrl = url;
-          this.mediaName = m.filename;
+          this.mediaFileName = m.filename;
         })
       }
     }

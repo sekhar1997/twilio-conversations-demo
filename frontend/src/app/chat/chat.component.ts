@@ -119,7 +119,7 @@ export class ChatComponent implements OnInit {
     if (!this.selectedConvo) {
       return
     }
-    this.selectedConvo.sendMessage({ contentType: acceptedFiles[0].type, media: acceptedFiles[0] });
+    this.selectedConvo.sendMessage({ contentType: acceptedFiles[0].type, media: acceptedFiles[0], filename: acceptedFiles[0].name });
   };
 
   fileChangeHandler(event: any) {
