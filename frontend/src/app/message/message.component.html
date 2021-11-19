@@ -1,0 +1,7 @@
+<div>
+  {{ message.author }}:
+  <span *ngIf="type === 'text'">{{ message.body }}</span>
+  <span *ngIf="type === 'media'">
+    <a [href]="mediaUrl" download="media.png">Media</a>
+  </span>
+</div>

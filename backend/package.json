@@ -1,0 +1,21 @@
+{
+  "name": "twilio-demo-backend",
+  "version": "1.0.0",
+  "description": "Demo backend for twilio conversations API",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "author": "Karan Vir Bains",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "twilio": "^3.71.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
