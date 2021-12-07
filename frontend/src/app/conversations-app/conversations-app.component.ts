@@ -6,16 +6,16 @@ import { LocalStorageService } from '../local-storage.service';
 @Component({
   selector: 'conversations-app',
   templateUrl: './conversations-app.component.html',
-  styleUrls: ['./conversations-app.component.css']
+  styleUrls: ['./conversations-app.component.css'],
 })
 export class ConversationsAppComponent implements OnInit {
+  identity = 'karan.b@axiomio.com';
 
-  identity = 'karan.b@axiomio.com'
-
-
-  constructor(private twilioService: TwilioService,
+  constructor(
+    private twilioService: TwilioService,
     private localStorage: LocalStorageService,
-    private router: Router) { }
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     if (this.localStorage.getItem(this.localStorage.LS_TOKEN_KEY)) {
@@ -27,9 +27,12 @@ export class ConversationsAppComponent implements OnInit {
     this.twilioService
       .generateToken(this.identity)
       .subscribe((tokenResponse) => {
-        this.localStorage.setItem(this.localStorage.LS_TOKEN_KEY, tokenResponse.token);
+        this.localStorage.setItem(
+          this.localStorage.LS_TOKEN_KEY,
+          tokenResponse.token
+        );
+        this.localStorage.setItem('buyerName', this.identity);
         this.router.navigateByUrl('/chat');
-      })
+      });
   }
-
 }

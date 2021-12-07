@@ -8,21 +8,24 @@ import { AppComponent } from './app.component';
 import { ConversationsAppComponent } from './conversations-app/conversations-app.component';
 import { ChatComponent } from './chat/chat.component';
 import { MessageComponent } from './message/message.component';
-
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { DownloadDirective } from './download.directive';
 @NgModule({
   declarations: [
     AppComponent,
     ConversationsAppComponent,
     ChatComponent,
-    MessageComponent
+    MessageComponent,
+    DownloadDirective,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    InfiniteScrollModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
